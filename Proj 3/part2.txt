@@ -1,0 +1,6 @@
+Part 2.1:
+Freed,SamJA+
+
+Part 2.2:
+STUDENT_NAME_LEN:       .word 0x10
+STUDENT_NAME:           .ascii "\x53\x61\x6d\x20\x20\x20\x20\x20\xf4\xff\xff\x03\xd8\x00\x00\x00"

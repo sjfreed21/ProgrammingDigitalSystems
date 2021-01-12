@@ -1,0 +1,24 @@
+1.
+First, the processor clears and reassigns r2, r3, and r4 to be "pointers" to the memory addresses of X, Y, and N. For the arrays X and Y,
+the address stored is the address of the first element. For N, the address is loaded and then replaced with the value (0x00000006). Then, it copies each
+element of the X array into the Y array and iterates both of the r2 and r3 pointers so that they point at the next element of the array. The value at r4
+is used as a decrementing counter, counting down from 6 to 0; once it hits zero, the loop breaks and the program finishes.
+
+Approximately equivalent C:
+void main() {
+    // definitions
+    int x[6]= {5, 3, -6, 19, 8, 12};
+    int y[6] = {0, 0, 0, 0, 0, 0};
+
+    // emulating the decrementing counter that fills the first element first
+    for(int n = 6; n > 0; n--) {
+        y[6-n] = x[6-n]; 
+    }
+    return;
+}
+---
+2.
+stw r4, -28(r19)
+---
+3. 
+0x2d9d203a
